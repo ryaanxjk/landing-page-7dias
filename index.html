@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 7 Dias - Venda Todos os Dias</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8e1;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #ffeb3b;
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: #b71c1c;
+      position: relative;
+    }
+    .urgency-banner {
+      background: #d84315;
+      color: #fff;
+      padding: 0.5rem;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    #countdown {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #880e4f;
+      font-weight: bold;
+    }
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .product, .testimonials {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3 {
+      color: #d84315;
+    }
+    .price {
+      font-size: 1.5rem;
+      color: #388e3c;
+      font-weight: bold;
+    }
+    .button {
+      background: #d84315;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 0.5rem;
+      margin-right: 10px;
+    }
+    .button:hover {
+      background: #bf360c;
+    }
+    .testimonial {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    footer {
+      background: #d7ccc8;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #4e342e;
+    }
+    .image-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 999;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebc59;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
+      .section {
+        padding: 1.5rem 1rem;
+      }
+      .button {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+      }
+      .product, .testimonials {
+        padding: 1rem;
+      }
+      .price {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="urgency-banner">⏰ CORRA! Últimas vagas com esse preço especial!</div>
+  <h1>ATENÇÃO, VENDEDOR(A)!</h1>
+  <p>Quer começar a vender todos os dias de forma prática? Participe desse desafio!</p>
+  <div id="countdown">Oferta termina em: --:--:--</div>
+</header>
+
+<div class="section image-section">
+  <img src="vendatodososdias.png" alt="Imagem Desafio 7 Dias">
+</div>
+
+<div class="section product">
+  <h2>🚀 Desafio 7 Dias - Venda Todos os Dias</h2>
+  <p>✅ Estratégias diárias para vendas consistentes</p>
+  <p>✅ Ações práticas e fáceis de aplicar</p>
+  <p>✅ Ideal para iniciantes e autônomos</p>
+  <p class="price">R$ 19,90</p>
+  <a class="button" href="https://mpago.la/1gDBdT2" target="_blank">PARTICIPAR AGORA</a>
+</div>
+
+<div class="section testimonials">
+  <h2>✨ Depoimentos de Clientes Felizes</h2>
+
+  <div class="testimonial">
+    “Comecei a vender já no terceiro dia! Simplesmente incrível!”<br>
+    — <strong>Ana Paula</strong>
+  </div>
+
+  <div class="testimonial">
+    “Finalmente um método que é prático e funciona de verdade!”<br>
+    — <strong>Rafael Souza</strong>
+  </div>
+
+  <div class="testimonial">
+    “Nunca achei que seria tão fácil começar a vender todos os dias.”<br>
+    — <strong>Camila Rocha</strong>
+  </div>
+</div>
+
+<a href="https://wa.me/556181127049" class="whatsapp-button" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20">
+  Fale com a gente
+</a>
+
+<footer>
+  Acesso imediato | Método comprovado | Vendas todos os dias 🚀
+</footer>
+
+<script>
+  function startCountdown(durationInMinutes) {
+    const countdown = document.getElementById('countdown');
+    let time = durationInMinutes * 60;
+    const interval = setInterval(() => {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      countdown.textContent = `Oferta termina em: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      if (time <= 0) {
+        clearInterval(interval);
+        countdown.textContent = "Oferta encerrada!";
+      }
+      time--;
+    }, 1000);
+  }
+  startCountdown(10);
+</script>
+
+</body>
+</html>
